@@ -18,6 +18,12 @@ h1,h2 {
   font-family: 'Open Sans Condensed', sans-serif !important;
 }
 
+h3 {
+  font-family: 'Open Sans Condensed', sans-serif !important;
+  text-align: center;
+  border-bottom: 1px solid black;
+  padding-bottom: 5px;
+}
 .navbar-default .navbar-nav>li>a {
   color: #FFF;
 }
