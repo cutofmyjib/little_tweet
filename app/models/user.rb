@@ -12,8 +12,7 @@ class User < ActiveRecord::Base
  validates :user_name, uniqueness: true
  validates :email, uniqueness: true
 
-
-  # users.password_hash in the database is a :string
+ # users.password_hash in the database is a :string
   include BCrypt
 
   def password

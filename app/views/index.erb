@@ -1,0 +1,33 @@
+<div id="twitter-head">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <h1 class="text-center">Lil Twitter</h1>
+        <h2 class="text-center">
+          Twitter just got smaller.
+        </h2>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-xs-12">
+        <% @tweets.each do |tweet| %>
+          <h4><a href="/tweets/<%=tweet.id %>"><%=tweet.body %></a></h4>
+        <% end %>
+      </div>
+  </div>
+
+  <form action="/tweets" method="POST" >
+    <input class="form_input" type="text" name="body" placeholder="compose a new tweet" />
+    <br>
+    <input class="form_input" type="submit" value="tweet">
+    <br>
+  </form>
+</div>
+
+
+
+
