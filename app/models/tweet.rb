@@ -1,5 +1,7 @@
 class Tweet < ActiveRecord::Base
-  validates :content, length: {
+  validates :body, length: {
     maximum: 140
   }
+
+  belongs_to :user
 end

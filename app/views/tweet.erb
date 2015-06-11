@@ -1,0 +1,14 @@
+
+<div class="page">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <p class="lead"><%= @tweet_id.body %></p>
+      </div>
+    </div>
+    <form action="/tweets/<%= @tweet_id.id %>" method="POST" id="delete">
+      <input type="hidden" name="_method" value="delete">
+      <button type='submit'>Delete</button>
+    </form>
+  </div>
+</div>
