@@ -1,8 +1,15 @@
+get '/' do
+
+end
+
 get '/signup' do
   #  yeild the form to create a new user
   erb :signup
 end
 
+get '/login' do
+  erb :login
+end
 
 post '/new_user' do
   # post route to recieve new user information.
@@ -19,17 +26,14 @@ post '/new_user' do
   end
 end
 
-get '/login' do
-  erb :login
-end
-
 post '/sessions' do
   @user = User.where(email: params[:email]).first if params[:email]
-  if @user && @user.password_hash == params[:password]
+
+  if @user.password == params[:password]
     session[:user_id] = @user.id
     redirect '/'
   else
-    @errors = @users.errors
+    @errors = @user.errors
     redirect '/login'
   end
 end
@@ -40,7 +44,3 @@ delete '/sessions' do
   redirect '/'
 end
 
-get '/' do
-  # if session[user_id]
-
-end
