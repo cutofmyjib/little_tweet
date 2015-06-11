@@ -6,11 +6,9 @@ end
 
 post '/new_user' do
   # post route to recieve new user information.
-  p params
   @user = User.new(name: params[:name],
                    email: params[:email],
                    user_name: params[:username])
-  p @user
   @user.password = params[:password]
 
   if @user.save!
@@ -21,6 +19,10 @@ post '/new_user' do
   end
 end
 
+get '/login' do
+  erb :login
+end
+
 post '/sessions' do
   @user = User.where(email: params[:email]).first if params[:email]
   if @user && @user.password_hash == params[:password]
@@ -28,7 +30,7 @@ post '/sessions' do
     redirect '/'
   else
     @errors = @users.errors
-    erb :sign_in
+    redirect '/login'
   end
 end
 
