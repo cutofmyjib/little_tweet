@@ -6,3 +6,4 @@ class CreateRelationships < ActiveRecord::Migration
     end
   end
 end
+
