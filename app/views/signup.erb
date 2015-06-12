@@ -1,7 +1,49 @@
-
+<div id="twitter-head">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <h1 class="text-center">Lil Twitter</h1>
+        <h2 class="text-center">
+          You must sign up to tweet lil tweets.
+        </h2>
+      </div>
+    </div>
+  </div>
+</div>
 <div class="container">
 <h2>Sign up</h2>
-<form action="/new_user" method="post">
+<form class="form" action="/new_user" method="post">
+  <div class="form-group">
+    <label for="Username">Username:</label>
+    <input type="text" class="form-control" name="username" value="">
+  </div>
+  <div class="form-group">
+    <label for="name">Name:</label>
+    <input type="text" class="form-control" name="name" value="">
+  </div>
+
+  <div class="form-group">
+    <label for="Email">Email:</label>
+    <input type="text" class="form-control" name="email" value="">
+  </div>
+
+  <div class="form-group">
+    <label for="Password">Password:</label>
+    <input type="password" class="form-control" name="password" value="">
+  </div>
+
+
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
+
+</div>
+
+
+
+
+
+
+<!-- <form class="form" action="/new_user" method="post">
   <label for="user_name">username</label>
   <input type="text" name="username" value="">
   </br>
@@ -15,5 +57,4 @@
   <input type="password" name="password" value="">
   </br>
   <input type="submit" value="Sign up">
-</form>
-</div>
+</form> -->
