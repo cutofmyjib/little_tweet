@@ -1,0 +1,23 @@
+<div id="twitter-head">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <h1 class="text-center">Lil Twitter</h1>
+        <h2 class="text-center">
+          Find some peeps.
+        </h2>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="follow" class="container">
+  <ul>
+  <% if @users %>
+    <% @users.each do |user|%>
+    <a href="/users/<%= user.id %>"><li class="inline"><%= user.user_name %></li></a>
+    <a href=""><li class="inline">follow</li></a>
+    <% end %>
+  <% end %>
+</ul>
+</div>

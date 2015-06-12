@@ -42,3 +42,10 @@ delete '/tweets/:tweet_id' do
 
   redirect '/'
 end
+
+get '/find_users' do
+  @users = User.all
+
+  erb :find_users
+end
+
