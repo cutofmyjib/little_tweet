@@ -13,23 +13,36 @@
 
 <div class="container">
   <div class="row">
-      <h3>Tweets</h3>
-      <div class="col-xs-12">
+      <div class="col-xs-6">
+        <h3>My Tweets</h3>
         <% @tweets.each do |tweet| %>
           <h4 class="text-center"><a href="/tweets/<%=tweet.id %>"><%=tweet.body %></a></h4>
         <% end %>
+        <form class="form-inline text-center" action="/tweets" role="form" method="POST">
+          <div class="form-group">
+            <input type="text" class="form-control" name="body" placeholder="compose a new tweet" />
+          </div>
+          <input type="submit" class="btn btn-primary" value="tweet">
+        </form>
+      </div>
+      <div class="col-xs-6">
+        <h3>Peeps Doin Lil Tweets</h3>
+        <ul>
+          <% @all_users.each do |user| %>
+              <li><a href="/find_users/profile/<%=user.id %>"><%= user.user_name %></a></li>
+          <% end %>
+        </ul>
       </div>
   </div>
   <hr>
   <div class="row">
     <div class="col-xs-12 text-center">
-      <form class="form-inline" action="/tweets" role="form" method="POST">
-        <div class="form-group">
-          <input type="text" class="form-control" name="body" placeholder="compose a new tweet" />
-        </div>
-        <input type="submit" class="btn btn-primary" value="tweet">
-      </form>
+
     </div>
+  </div>
+
+  <div class="row">
+
   </div>
 </div>
 

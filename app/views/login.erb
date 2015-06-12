@@ -1,12 +1,34 @@
+
+
+<div id="twitter-head">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <h1 class="text-center">Lil Twitter</h1>
+        <h2 class="text-center">
+          Sign in, you will.
+        </h2>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="container">
-<h2>Log in</h2>
-<form action="/sessions" method="post">
-  <label for="Email">email</label>
-  <input type="text" name="email" value="">
-  </br>
-  <label for="password">password</label>
-  <input type="password" name="password" value="">
-  </br>
-  <input type="submit" value="Log in">
+  <br>
+<form class="form" action="/sessions" method="post">
+
+  <div class="form-group">
+    <label for="Email">Email:</label>
+    <input type="text" class="form-control" name="email" value="">
+  </div>
+
+  <div class="form-group">
+    <label for="Password">Password:</label>
+    <input type="password" class="form-control" name="password" value="">
+  </div>
+
+
+  <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 </div>
+

@@ -37,3 +37,5 @@ h3 {
 #follow h1{
   color: #000 !important;
 }
+
+li { list-style-type: none; font-size: 18px; text-align: center;}

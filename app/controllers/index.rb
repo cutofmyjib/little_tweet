@@ -10,14 +10,16 @@ get '/tweets' do
 
 
   if session[:user_id]
+      @all_users = User.all
       @user = User.find(session[:user_id])
-      p session
       @tweets = @user.tweets
-    p "INDEX"
     erb :index
   else
     redirect '/signup'
   end
+
+
+
 end
 
 
@@ -47,9 +49,9 @@ get '/find_users' do
 
   if session[:user_id]
       @user = User.find(session[:user_id])
-    else
+  else
       redirect '/signup'
-    end
+  end
 
 
   @users = User.all
@@ -71,12 +73,39 @@ end
 # for following users
 get '/find_users/follow/:user_to_follow' do
   if session[:user_id]
-     p  @user = User.find(session[:user_id])
-     p  follow_user = User.find(params[:user_to_follow])
-     p  @user.follow(follow_user)
+     @user = User.find(session[:user_id])
+     follow_user = User.find(params[:user_to_follow])
+     @user.follow(follow_user)
+
+     p @user
      erb :show_user
     else
       redirect '/signup'
     end
 
 end
+
+
+get '/find_users/show_user/:user_id' do
+
+  if session[:user_id]
+      @user = User.find(session[:user_id])
+
+      erb :show_user
+    else
+      redirect '/signup'
+    end
+end
+
+get '/find_users/profile/:profile' do
+  if session[:user_id]
+     @user = User.find(session[:user_id])
+     @profile = User.find(params[:profile])
+
+     erb :profile
+    else
+      redirect '/signup'
+    end
+
+end
+

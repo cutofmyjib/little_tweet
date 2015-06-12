@@ -6,7 +6,7 @@
       <div class="col-xs-12">
         <h1 class="text-center">Lil Twitter</h1>
         <h2 class="text-center">
-          Here's your profile <%= @user.name %>
+          Here's your friend <%= @profile.name %>
         </h2>
       </div>
     </div>
@@ -16,14 +16,10 @@
 <div class="container">
   <div class="row">
       <div class="col-xs-12">
-        <h3>Yo following these peeps.</h3>
         <div class="row">
             <div class="col-xs-12 text-center">
-              <% @user.following.each do |person| %>
-                  <h4><%= person.name %></h4>
-                <% person.tweets.each do |tweet| %>
-                  <p><%= tweet.body %></p>
-                <% end %>
+              <% @profile.tweets.each do |tweet| %>
+                <p><%= tweet.body %></p>
               <% end %>
             </div>
         </div>
