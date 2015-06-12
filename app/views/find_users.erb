@@ -15,8 +15,8 @@
   <ul>
   <% if @users %>
     <% @users.each do |user|%>
-    <a href="/users/<%= user.id %>"><li class="inline"><%= user.user_name %></li></a>
-    <a href=""><li class="inline">follow</li></a>
+    <a href="/find_users/<%= user.id %>"><li class="inline"><%= user.user_name %></li></a>
+    <a href="/find_users/follow/<%= user.id %>"><li class="inline">follow</li></a>
     <% end %>
   <% end %>
 </ul>

@@ -44,8 +44,39 @@ delete '/tweets/:tweet_id' do
 end
 
 get '/find_users' do
+
+  if session[:user_id]
+      @user = User.find(session[:user_id])
+    else
+      redirect '/signup'
+    end
+
+
   @users = User.all
 
   erb :find_users
 end
 
+get '/find_users/:user_id' do
+
+  if session[:user_id]
+      @user = User.find(session[:user_id])
+
+      erb :show_user
+    else
+      redirect '/signup'
+    end
+end
+
+# for following users
+get '/find_users/follow/:user_to_follow' do
+  if session[:user_id]
+     p  @user = User.find(session[:user_id])
+     p  follow_user = User.find(params[:user_to_follow])
+     p  @user.follow(follow_user)
+     erb :show_user
+    else
+      redirect '/signup'
+    end
+
+end

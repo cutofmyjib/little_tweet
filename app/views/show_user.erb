@@ -1,0 +1,9 @@
+<div class="container">
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<h1 style="color: red">Here's your profile <%= @user.name %></h1>
+
+
+<% @user.following.each do |u| %>
+  <%= u.name %>
+  <% end %>

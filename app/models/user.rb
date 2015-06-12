@@ -24,4 +24,8 @@ class User < ActiveRecord::Base
     self.password_hash = @password
   end
 
+  def follow(user)
+    p self.following << user
+  end
+
 end
