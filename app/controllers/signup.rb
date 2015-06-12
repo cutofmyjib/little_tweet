@@ -1,7 +1,3 @@
-get '/' do
-
-end
-
 get '/signup' do
   #  yeild the form to create a new user
   erb :signup
@@ -38,7 +34,13 @@ post '/sessions' do
   end
 end
 
-delete '/sessions' do
+# delete '/sessions' do
+#   # LOGOUT functionality
+#   session[:user_id] = nil
+#   redirect '/'
+# end
+
+get '/logout' do
   # LOGOUT functionality
   session[:user_id] = nil
   redirect '/'
