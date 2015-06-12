@@ -12,11 +12,12 @@
 </div>
 
 <div id="follow" class="container">
-  <ul>
+  <h2 class="text-center">Heres some people to follow:</h2>
+  <ul class="list-inline text-center">
   <% if @users %>
     <% @users.each do |user|%>
-    <a href="/find_users/<%= user.id %>"><li class="inline"><%= user.user_name %></li></a>
-    <a href="/find_users/follow/<%= user.id %>"><li class="inline">follow</li></a>
+    <li class="inline"><a href="/find_users/<%= user.id %>"><h4><%= user.user_name %></h4></a></li>
+    <li class="inline"><a href="/find_users/follow/<%= user.id %>" class="btn btn-primary">follow</a></li> <br/>
     <% end %>
   <% end %>
 </ul>
