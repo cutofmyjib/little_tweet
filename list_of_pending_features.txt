@@ -1,0 +1,9 @@
+-add avatar
+-allow the user to favorite the tweet
+-show users tweets on their home page
+-show users followers tweets + their tweets like on a real timeline
+-allow user to retweet tweet
+-user needs  banner
+-user can delete their tweets
+-create message page
+-user gets notification from user when they are tagged in tweet
